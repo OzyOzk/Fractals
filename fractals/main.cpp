@@ -12,7 +12,7 @@
 #include "Log.h"
 #include "ZoomList.h"
 
-//
+//hello
 int main()
 {
     int const WIDTH = 2560;

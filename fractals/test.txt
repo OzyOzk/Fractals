@@ -1,5 +1,5 @@
 Filename:			test.txt
 Height:				1440
 Width:				2560
-Duration(seconds):		31.6858
+Duration(seconds):		39.2704
 Build mode:			Release
