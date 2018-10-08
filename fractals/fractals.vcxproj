@@ -120,6 +120,7 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mandelbrot.cpp" />
+    <ClCompile Include="RGB.cpp" />
     <ClCompile Include="ZoomList.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +130,7 @@
     <ClInclude Include="FractalCreator.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="Mandelbrot.h" />
+    <ClInclude Include="RGB.h" />
     <ClInclude Include="Zoom.h" />
     <ClInclude Include="ZoomList.h" />
   </ItemGroup>
