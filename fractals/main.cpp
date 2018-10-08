@@ -28,6 +28,7 @@ int main()
         {
             bitmap.setPixel(x, y, 255, 0, 255);
         }
+
 */
 
 
