@@ -1,7 +1,5 @@
 #include "FractalCreator.h"
 
-
-
 FractalCreator::FractalCreator(int width, int height) :
     _width(width), _height(height),
     _histogram(new int[fractals::Mandelbrot::MAX_ITERATIONS + 1]{ 0 }),
@@ -47,9 +45,9 @@ void FractalCreator::drawFractral()
                     hue += static_cast<double>(_histogram[i]) / _sum;
                 }
 
-                red = pow(127, hue);
-                green = 0;
-                blue = pow(100, hue);
+                red = 0;
+                green = pow(100, hue);
+                blue = 0;
             }
 
             _bitmap.setPixel(x, y, red, green, blue);

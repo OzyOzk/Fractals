@@ -9,7 +9,6 @@
 
 #include "BitmapFileHeader.h"
 #include "BitmapInfoHeader.h"
-#include "Log.h"
 #include "Mandelbrot.h"
 #include "Zoom.h"
 #include "ZoomList.h"
