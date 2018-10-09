@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="FractalCreator.cpp" />
+    <ClCompile Include="HSV.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mandelbrot.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="BitmapFileHeader.h" />
     <ClInclude Include="BitmapInfoHeader.h" />
     <ClInclude Include="FractalCreator.h" />
+    <ClInclude Include="HSV.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="Mandelbrot.h" />
     <ClInclude Include="Zoom.h" />

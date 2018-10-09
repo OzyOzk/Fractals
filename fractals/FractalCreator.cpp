@@ -47,9 +47,9 @@ void FractalCreator::drawFractral()
                     hue += static_cast<double>(_histogram[i]) / _sum;
                 }
 
-                red = hue * 255;
+                red = pow(127, hue);
                 green = 0;
-                blue = 0;
+                blue = pow(100, hue);
             }
 
             _bitmap.setPixel(x, y, red, green, blue);

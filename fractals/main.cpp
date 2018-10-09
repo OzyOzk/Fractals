@@ -8,14 +8,14 @@ int main()
 {
     int height = 600;
 
-    FractalCreator fractalcreator(800, 600);
+    FractalCreator fractalcreator(3840, 2160);
 
-    fractalcreator.addZoom(fractals::Zoom(295, height - 202, 0.1));
-    fractalcreator.addZoom(fractals::Zoom(312, height - 304, 0.1));
+    //fractalcreator.addZoom(fractals::Zoom(295, height - 202, 0.1));
+    //fractalcreator.addZoom(fractals::Zoom(312, height - 304, 0.1));
     fractalcreator.calculateIteration();
     fractalcreator.calculateTotalIterations();
     fractalcreator.drawFractral();
-    fractalcreator.writeBitmap("test1.bmp");
+    fractalcreator.writeBitmap("test2.bmp");
     std::cout << "finished" << std::endl;
 }
 
