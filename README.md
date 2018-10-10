@@ -6,7 +6,7 @@
 * Need to add color smoothing. There is very noticable banding. Need to implement logarithmic smoothing to mandlebrot function
 
 ### Sample images
-All samples are jpeg as the generated bitmaps are huge.
+These images are genearated using the code found in the "with_hsv" branch of this project. All samples are .jpeg as the generated bitmaps are huge.
 
 Hue[0,60], saturation 100%, value 100%
 ![Large 8K image using limited hue region](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/main.jpg)
