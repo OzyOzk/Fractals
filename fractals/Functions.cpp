@@ -21,12 +21,12 @@ RGB toRGB(HSV& hsv)
         int i;
         double f, p, q, t;
 
-        if (hsv._h == 360) hsv._h = 0;
+        if (hsv._h == 360.0) hsv._h = 0;
 
-        else hsv._h = hsv._h / 60;
+        else hsv._h = hsv._h / 60.0;
 
-        i = static_cast<int> (trunc(hsv._h));
-        f = hsv._h - 1;
+        i = static_cast<int> (floor(hsv._h));
+        f = hsv._h - i;
 
         p = hsv._v * (1.0 - hsv._s);
         q = hsv._v * (1.0 - (hsv._s * f));
@@ -47,9 +47,9 @@ RGB toRGB(HSV& hsv)
         else { r = hsv._v; g = p; b = q; }
     }
 
-    R = r * 255;
-    G = g * 255;
-    B = B * 255;
+    R = static_cast<uint8_t>(r * 255);
+    G = static_cast<uint8_t>(g * 255);
+    B = static_cast<uint8_t>(b * 255);
 
     return RGB(R, G, B);
 }

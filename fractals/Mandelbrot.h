@@ -5,7 +5,7 @@ namespace fractals
     class Mandelbrot
     {
     public:
-        static const int MAX_ITERATIONS = 500;
+        static const int MAX_ITERATIONS = 2500;
     public:
         Mandelbrot();
         virtual ~Mandelbrot();

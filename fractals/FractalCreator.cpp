@@ -31,13 +31,11 @@ void FractalCreator::drawFractral()
     for (int y = 0; y < _height; y++) {
         for (int x = 0; x < _width; x++)
         {
-            uint8_t red = 0;
-            uint8_t green = 0;
-            uint8_t blue = 0;
 
             RGB rgb(0, 0, 0);
 
             int iterations = _fractal[y*_width + x];
+
             if (iterations != fractals::Mandelbrot::MAX_ITERATIONS)
             {
                 double hue = 0.0;
@@ -47,12 +45,14 @@ void FractalCreator::drawFractral()
                     hue += static_cast<double>(_histogram[i]) / _sum;
                 }
 
-                rgb._r = 0;
-                rgb._g = pow(100, hue);
-                rgb._b = 0;
-            }
+                //hue = 200+hue * 50;
+                int h = pow(40, hue);
+                HSV hsv(220.0+h, 0.8, 0.8);
 
+                rgb = toRGB(hsv);
+            }
             _bitmap.setPixel(x, y, rgb._r, rgb._g, rgb._b);
+            
 
         }
     }
@@ -78,3 +78,23 @@ void FractalCreator::writeBitmap(std::string name)
 FractalCreator::~FractalCreator()
 {
 }
+
+/*
+
+            if (iterations != fractals::Mandelbrot::MAX_ITERATIONS)
+            {
+                double hue = 0.0;
+
+                for (int i = 0; i <= iterations; i++)
+                {
+                    hue += static_cast<double>(_histogram[i]) / _sum;
+                }
+
+                //hue = 200+hue * 50;
+                
+                HSV hsv(0, 0.9, hue);
+
+                rgb = toRGB(hsv);
+            }
+
+*/
