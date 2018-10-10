@@ -2,7 +2,6 @@
 
 #include <chrono>
 #include <fstream>
-#include "Bitmap.h"
 #include <iostream>
 
 class Log

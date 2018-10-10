@@ -1,5 +1,5 @@
-Filename:			Test4.bmp
-Height:				2160
-Width:				3840
-Duration(seconds):		136.237
+Filename:			bmp
+Height:				600
+Width:				800
+Duration(seconds):		1.64092
 Build mode:			Release

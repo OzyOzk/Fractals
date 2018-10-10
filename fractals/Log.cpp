@@ -11,7 +11,7 @@ Log::~Log()
     t2 = std::chrono::steady_clock::now();
     duration = (t2 - t1);
     _file.open(_filename);
-    _file << "Filename:\t\t\t" << _filename.substr(0, _filename.length() - 3) << "bmp" << "\n";
+    _file << "Filename:\t\t\t"  << "bmp" << "\n";
     _file << "Height:\t\t\t\t" << _height << "\n";
     _file << "Width:\t\t\t\t" << _width << "\n";
     _file << "Duration(seconds):\t\t" << duration.count() << "\n";

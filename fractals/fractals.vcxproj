@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="FractalCreator.cpp" />
+    <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mandelbrot.cpp" />

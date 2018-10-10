@@ -1,18 +1,15 @@
 #pragma once
+#include <cstdint>
 
 struct RGB
 {
-    double _r{ 0 };
-    double _g{ 0 };
-    double _b{ 0 };
+    uint8_t _r{ 0 };
+    uint8_t _g{ 0 };
+    uint8_t _b{ 0 };
 
-    RGB(double r, double g, double b);
+    RGB(uint8_t r, uint8_t g, uint8_t b) : _r(r), _g(g), _b(b) {}
 };
 
-RGB::RGB(double r, double g, double b) : _r(r), _g(g), _b(b) {}
+//RGB::RGB(uint8_t r, uint8_t g, uint8_t b) : _r(r), _g(g), _b(b) {}
 
 
-RGB operator-(const RGB& first, const RGB& second)
-{
-    return RGB(first._r - second._r, first._g - second._g, first._b - second._b);
-}

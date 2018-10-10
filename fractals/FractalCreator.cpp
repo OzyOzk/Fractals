@@ -35,6 +35,8 @@ void FractalCreator::drawFractral()
             uint8_t green = 0;
             uint8_t blue = 0;
 
+            RGB rgb(0, 0, 0);
+
             int iterations = _fractal[y*_width + x];
             if (iterations != fractals::Mandelbrot::MAX_ITERATIONS)
             {
@@ -45,12 +47,12 @@ void FractalCreator::drawFractral()
                     hue += static_cast<double>(_histogram[i]) / _sum;
                 }
 
-                red = 0;
-                green = pow(100, hue);
-                blue = 0;
+                rgb._r = 0;
+                rgb._g = pow(100, hue);
+                rgb._b = 0;
             }
 
-            _bitmap.setPixel(x, y, red, green, blue);
+            _bitmap.setPixel(x, y, rgb._r, rgb._g, rgb._b);
 
         }
     }

@@ -12,15 +12,18 @@ int height_2k = 1440;
 int width_8k = 7680;
 int height_8k = 4320;
 
+int test_w = 800;
+int test_h = 600;
+
 std::string name = "Test4.bmp";
 
 
 
 int main()
 {
-    Log log(name, width_4k, height_4k);
+    Log log(name, test_w, test_h);
 
-    FractalCreator fractalcreator(width_4k, height_4k);
+    FractalCreator fractalcreator(test_w, test_h);
 
 
     fractalcreator.calculateIteration();

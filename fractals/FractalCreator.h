@@ -10,9 +10,9 @@
 #include "BitmapFileHeader.h"
 #include "BitmapInfoHeader.h"
 #include "Mandelbrot.h"
-#include "Zoom.h"
 #include "ZoomList.h"
 #include "Bitmap.h"
+#include "Functions.h"
 
 class FractalCreator
 {
