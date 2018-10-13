@@ -20,7 +20,7 @@ int test_h = 600;
 
 std::string name = "Test4.bmp";
 
-//with_hsv
+//  with_hsv
 
 
 int main()
