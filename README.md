@@ -31,17 +31,14 @@ These images are genearated using the code found in the "with_hsv" branch of thi
 Hue[0,60], saturation 100%, value 100%
 ![Large 8K image using limited hue region](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/main.jpg)
 
-Wide RGB range in zoomed in region
+Wide RGB range in zoomed in region Hue[0,360], saturation 100%, value 100%
 
 ![Zoomed in colourful](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/Test10j.jpg)
 
 Hue[220,260], saturation 100%, value 100%. Gradually zooming in
 ![Large 8K image using limited hue region](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/Test4j.jpg)
-
 ![Large 8K image using limited hue region](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/Test5j.jpg)
-
 ![Large 8K image using limited hue region](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/Test6j.jpg)
-
 ![Large 8K image using limited hue region](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/Test7j.jpg)
 
 
