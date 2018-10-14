@@ -3,7 +3,7 @@
 ### Tasks
 
 * Large images are taking a while to generate (8K image at 10000 iterations took 20 minutes). Need to look into optimization
-* Need to add color smoothing. There is very noticable banding. Need to implement logarithmic smoothing to mandlebrot function
+* ~~Need to add color smoothing. There is very noticable banding. Need to implement logarithmic smoothing to mandlebrot function~~
 
 #### Color Smoothing
 
