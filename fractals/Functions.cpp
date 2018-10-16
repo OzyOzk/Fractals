@@ -53,3 +53,8 @@ RGB toRGB(HSV& hsv)
 
     return RGB(R, G, B);
 }
+
+double linearIterpolation(double x1, double x2, double c)
+{
+    return x1 * (1.0 - c) + x2 * c;
+}

@@ -6,3 +6,5 @@
 #include "RGB.h"
 
 RGB toRGB(HSV& hsv);
+
+double linearIterpolation(double x1, double x2, double c);

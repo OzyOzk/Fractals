@@ -3,42 +3,26 @@
 #include <math.h>
 namespace fractals
 {
+    Mandelbrot::Mandelbrot() {}
+    Mandelbrot::~Mandelbrot() {}
 
-    Mandelbrot::Mandelbrot()
+    double Mandelbrot::getIterations(double x, double y)
     {
-    }
-
-
-    Mandelbrot::~Mandelbrot()
-    {
-    }
-
-    int Mandelbrot::getIterations(double x, double y)
-    {
-        std::complex<double> z = 0;
-        std::complex<double> zn = 0;
         std::complex<double> c(x, y);
+        std::complex<double> z = 0;
 
-        int iterations = 0;
-        //double smooth = 0.0;
-        /*
-        Mandlebrot set is from -2, 2. Entire plot fits
-        withint a circle of diameter 2 centered around
-        the origin of the plot 
-        */
-        while (iterations < MAX_ITERATIONS)
+        double iterations = 0;
+
+        while (iterations <= MAX_ITERATIONS)
         {
             z = z * z + c;
 
-            if (abs(z) > 2)
-            {
-                //zn = z;
-                break;
+            if (abs(z) > ESCAPE_RADIUS) {
+                return iterations + 1.0 - log(log(abs(z))) / log(ESCAPE_RADIUS);
             }
             iterations++;
         }
-        
-        //smooth = iterations - log(log(abs(zn)) / log(360.0)) / log(2);
-        return iterations;
+        return static_cast<double>(MAX_ITERATIONS);
     }
+
 }

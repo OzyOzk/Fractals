@@ -19,10 +19,11 @@ class FractalCreator
 private:
     unsigned int _width{ 0 };
     unsigned int _height{ 0 };
-    unsigned int _sum{ 0 };
+    unsigned int _sum{ 0 };;
+    double hue = 0;
 
     std::unique_ptr<int[]> _histogram;
-    std::unique_ptr<int[]> _fractal;
+    std::unique_ptr<double[]> _fractal;
 
     bitmap::Bitmap _bitmap;
     fractals::ZoomList _zoomlist;
