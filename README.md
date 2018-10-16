@@ -12,10 +12,18 @@ Added Color smoothing by normalizing the iteration count. Done by taking the log
 ```cpp
 if(abs(z) > 2)
 {
-  return iterations + 1.0 - log(log2(abs(z)));
+  ~~return iterations + 1.0 - log(log2(abs(z)));~~
+  return iterations + 1.0 - log(log(abs(z))) / log(ESCAPE_RADIUS);
   break;
 }
 ```
+
+The normalized iteration count is now calculated as follows;
+```cpp
+return iterations + 1.0 - log(log(abs(z))) / log(ESCAPE_RADIUS);
+```
+
+This is more generalized as I may choose to increase the escape radius (bailout radius to some) later.
 
 This produces images like those below;
 ![Smooth mandelbrot](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/smooth1j.jpg)
