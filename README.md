@@ -7,16 +7,16 @@
 
 #### Color Smoothing
 
-~~Added Color smoothing by normalizing the iteration count. Done by taking the log of the log of the magnitude of the imagninary number at escape value. See below;
+Added Color smoothing by normalizing the iteration count. Done by taking the log of the log of the magnitude of the imagninary number at escape value. See below;
 
 ```cpp
 if(abs(z) > 2)
 {
-  return iterations + 1.0 - log(log(abs(z))) / log(ESCAPE_RADIUS);
+  return iterations + 1.0 - log(log2(abs(z)));
   break;
 }
 ```
-The normalized iteration count is now calculated as follows;
+**The normalized iteration count is now calculated as follows;**
 ```cpp
 return iterations + 1.0 - log(log(abs(z))) / log(ESCAPE_RADIUS);
 ```
