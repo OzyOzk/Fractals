@@ -1,5 +1,0 @@
-Filename:			bmp
-Height:				320
-Width:				480
-Duration(seconds):		0.682108
-Build mode:			Release

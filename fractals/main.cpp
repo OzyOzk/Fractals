@@ -3,17 +3,17 @@
 #include "FractalCreator.h"
 #include "Log.h"
 
-int test_w = 1920;
-int test_h = 1080;
+int test_w = 7680;  //  7680    4096    2560    1920    1280
+int test_h = 4320;  //  4320    2160    1440    1080    720
 
-std::string name = "Test4.bmp";
+std::string name = "8k_julia_rgb_n0d4p0dt.bmp";
 
 //  with_hsv
 
 
 int main()
 {
-    Log log(name, 480, 320);
+    Log log(name, test_w, test_h);
 
     FractalCreator fractalcreator(test_w, test_h);
     /*
@@ -27,6 +27,6 @@ int main()
     fractalcreator.drawFractral();
     fractalcreator.writeBitmap(name);
     std::cout << "finished" << std::endl;
-    std::cin.get();
+    //std::cin.get();
 }
 

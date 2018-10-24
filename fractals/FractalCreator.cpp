@@ -17,9 +17,9 @@ void FractalCreator::calculateIteration()
         {
             std::pair<double, double> coords = _zoomlist.doZoom(x, y);
 
-            double iterations = fractals::Mandelbrot::getIterations(coords.first, coords.second);
+            double iterations = fractals::Mandelbrot::getJulia(coords.first, coords.second, -0.4, 0.6);
 
-            _fractal[y*_width + x] = iterations;
+            _fractal[y*_width + x] = abs(iterations);
 
             if (iterations != fractals::Mandelbrot::MAX_ITERATIONS) _histogram[floor(iterations)]++;
 
@@ -49,7 +49,6 @@ void FractalCreator::drawFractral()
                 }
 
                 double color = 360.0*iterations/fractals::Mandelbrot::MAX_ITERATIONS;
-                
                 HSV hsv(color, 1.0, 1.0);
 
                 rgb = toRGB(hsv);

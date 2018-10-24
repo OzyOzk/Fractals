@@ -1,0 +1,5 @@
+Filename:			8k_julia_rgb_n0d4p0dt
+Height:				4320
+Width:				7680
+Duration(seconds):		43.9905
+Build mode:			Release
