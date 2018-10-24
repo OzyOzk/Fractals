@@ -27,7 +27,8 @@ This produces images like those below;
 ![Smooth mandelbrot](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/smooth1j.jpg)
 Zoomed in regions shown below need a higher iteration count 
 ![Smooth mandelbrot zoomed](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/smooth2j.jpg)
-
+Julia sets look like this;
+![Smooth Julia](https://github.com/OzyOzk/fractals/blob/with_hsv/fractals/Samples/rgb_julia_8k.jpg)
 #### Estimating distance to nearest mandelbrot surface
 
 I'll be adding in the ability to draw the mandelbrot set using a distance estimation algorithm. Currently I have the following;
