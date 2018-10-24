@@ -1,5 +1,0 @@
-Filename:			8k_julia_rgb_goldenratio
-Height:				4320
-Width:				7680
-Duration(seconds):		65.475
-Build mode:			Release
