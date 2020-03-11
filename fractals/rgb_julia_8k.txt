@@ -1,0 +1,5 @@
+Filename:			rgb_julia_8k
+Height:				4320
+Width:				7680
+Duration(seconds):		61.81
+Build mode:			Release

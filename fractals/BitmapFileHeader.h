@@ -1,4 +1,5 @@
 #pragma once
+
 #include <cstdint> // for filesize. To ensure it is 32 bit
 
 #pragma pack(2)

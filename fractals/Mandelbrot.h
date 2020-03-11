@@ -5,11 +5,13 @@ namespace fractals
     class Mandelbrot
     {
     public:
-        static const int MAX_ITERATIONS = 1000;
+        static const int MAX_ITERATIONS{ 256 };
+        static const int ESCAPE_RADIUS{ 20000000 };
     public:
         Mandelbrot();
         virtual ~Mandelbrot();
 
-        static int getIterations(double x, double y);
+        static double getMandelbrot(double x, double y);
+        static double getJulia(double x, double y, double c1, double c2);
     };
 }

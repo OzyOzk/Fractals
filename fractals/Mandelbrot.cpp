@@ -1,36 +1,48 @@
 #include "Mandelbrot.h"
 #include <complex>
+#include <math.h>
 namespace fractals
 {
+    Mandelbrot::Mandelbrot() {}
+    Mandelbrot::~Mandelbrot() {}
 
-    Mandelbrot::Mandelbrot()
+    double Mandelbrot::getMandelbrot(double x, double y)
     {
-    }
-
-
-    Mandelbrot::~Mandelbrot()
-    {
-    }
-
-    int Mandelbrot::getIterations(double x, double y)
-    {
-        std::complex<double> z = 0;
         std::complex<double> c(x, y);
+        std::complex<double> z = 0;
 
-        int iterations = 0;
-        /*
-        Mandlebrot set is from -2, 2. Entire plot fits
-        withint a circle of diameter 2 centered around
-        the origin of the plot 
-        */
-        while (iterations < MAX_ITERATIONS)
+        double iterations = 0;
+
+        while (iterations <= MAX_ITERATIONS)
         {
             z = z * z + c;
 
-            if (abs(z) > 2) break;
-
+            if (abs(z) > ESCAPE_RADIUS)
+            {
+                return iterations + 1.0 - log(log(abs(z))) / log(ESCAPE_RADIUS);
+            }
             iterations++;
         }
-        return iterations;
+        return static_cast<double>(MAX_ITERATIONS);
     }
+
+    double Mandelbrot::getJulia(double x, double y, double c1, double c2)
+    {
+        std::complex<double> z(x, y);
+        std::complex<double> c(c1, c2);
+
+        double iterations = 0;
+
+        while (iterations < MAX_ITERATIONS)
+        {
+            z = z * z + c;
+            if (abs(z) > ESCAPE_RADIUS) {
+                return iterations + 1.0 - log(log(abs(z)))/log(ESCAPE_RADIUS);
+                break;
+            }
+            iterations++;
+        }
+        return double(MAX_ITERATIONS);
+    }
+
 }

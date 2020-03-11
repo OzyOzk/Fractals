@@ -1,49 +1,32 @@
 #include <iostream>
 
-
 #include "FractalCreator.h"
+#include "Log.h"
 
-//hello
+int test_w = 7680;  //  7680    4096    2560    1920    1280
+int test_h = 4320;  //  4320    2160    1440    1080    720
+
+std::string name = "8k_julia_rgb_n0d4p0dt.bmp";
+
+//  with_hsv
+
+
 int main()
 {
-    int height = 600;
+    Log log(name, test_w, test_h);
 
-    FractalCreator fractalcreator(800, 600);
-
-    fractalcreator.addZoom(fractals::Zoom(295, height - 202, 0.1));
-    fractalcreator.addZoom(fractals::Zoom(312, height - 304, 0.1));
+    FractalCreator fractalcreator(test_w, test_h);
+    /*
+    fractalcreator.addZoom(fractals::Zoom(2560, height_8k - 1288, 0.1));
+    fractalcreator.addZoom(fractals::Zoom(3180, height_8k - 1840, 0.1));
+    fractalcreator.addZoom(fractals::Zoom(3840, height_8k - 2152, 0.05));
+    fractalcreator.addZoom(fractals::Zoom(3896, height_8k - 2228, 0.005));
+    */
     fractalcreator.calculateIteration();
     fractalcreator.calculateTotalIterations();
     fractalcreator.drawFractral();
-    fractalcreator.writeBitmap("test1.bmp");
+    fractalcreator.writeBitmap(name);
     std::cout << "finished" << std::endl;
+    //std::cin.get();
 }
 
-/*
-
-//Test code for seting entire map a flat colour
-
-    for(int y = 0; y < HEIGHT; y++)
-        for (int x = 0; x < WIDTH; x++)
-        {
-            bitmap.setPixel(x, y, 255, 0, 255);
-        }
-
-*/
-
-
-/*
-
-//Test code for seeing iterations and validating histogram;
-
-    int sum = 0;
-    for (int i = 0; i < fractals::Mandelbrot::MAX_ITERATIONS; i++)
-    {
-        std::cout << "index " << i << ":\t" << histogram[i] << std::endl;
-        sum += histogram[i];
-    }
-    
-    std::cout << "Histogram sum\t" << sum << std::endl;
-    std::cout << "Maximum pixles\t " << HEIGHT * WIDTH << std::endl;
-
-*/

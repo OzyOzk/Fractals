@@ -1,11 +1,9 @@
 #include "FractalCreator.h"
 
-
-
 FractalCreator::FractalCreator(int width, int height) :
     _width(width), _height(height),
     _histogram(new int[fractals::Mandelbrot::MAX_ITERATIONS + 1]{ 0 }),
-    _fractal(new int[_width*_height]),
+    _fractal(new double[_width*_height]),
     _bitmap(_width, _height, "test.bmp"),
     _zoomlist(_width, _height)
 {
@@ -19,41 +17,44 @@ void FractalCreator::calculateIteration()
         {
             std::pair<double, double> coords = _zoomlist.doZoom(x, y);
 
-            int iterations = fractals::Mandelbrot::getIterations(coords.first, coords.second);
+            double iterations = fractals::Mandelbrot::getJulia(coords.first, coords.second, -0.4, 0.6);
 
-            _fractal[y*_width + x] = iterations;
+            _fractal[y*_width + x] = abs(iterations);
 
-            if (iterations != fractals::Mandelbrot::MAX_ITERATIONS) _histogram[iterations]++;
+            if (iterations != fractals::Mandelbrot::MAX_ITERATIONS) _histogram[floor(iterations)]++;
 
         }
 }
 
 void FractalCreator::drawFractral()
 {
+    for (int i = 0; i < fractals::Mandelbrot::MAX_ITERATIONS + 1; i++)
+    {
+        //std::cout << _histogram[i] << std::endl;
+    }
     for (int y = 0; y < _height; y++) {
         for (int x = 0; x < _width; x++)
         {
-            uint8_t red = 0;
-            uint8_t green = 0;
-            uint8_t blue = 0;
+            RGB rgb(0, 0, 0);
 
-            int iterations = _fractal[y*_width + x];
+            double iterations = _fractal[y*_width + x];
+
             if (iterations != fractals::Mandelbrot::MAX_ITERATIONS)
             {
                 double hue = 0.0;
 
                 for (int i = 0; i <= iterations; i++)
                 {
-                    hue += static_cast<double>(_histogram[i]) / _sum;
+                    hue += _histogram[i] / static_cast<double>(_sum);
                 }
 
-                red = hue * 255;
-                green = 0;
-                blue = 0;
+                double color = 360.0*iterations/fractals::Mandelbrot::MAX_ITERATIONS;
+                HSV hsv(color, 1.0, 1.0);
+
+                rgb = toRGB(hsv);
             }
-
-            _bitmap.setPixel(x, y, red, green, blue);
-
+            _bitmap.setPixel(x, y, rgb._r, rgb._g, rgb._b);
+            
         }
     }
 }
@@ -75,6 +76,4 @@ void FractalCreator::writeBitmap(std::string name)
     _bitmap.write(name);
 }
 
-FractalCreator::~FractalCreator()
-{
-}
+FractalCreator::~FractalCreator() {}
